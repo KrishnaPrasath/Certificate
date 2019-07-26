@@ -26,9 +26,9 @@
         height: 80px;
       }
       #logoDiv {
-        height: 80px;
+        height: 100px;
         width: 150px;
-
+        filter: brightness(-5);
         padding: 10px;
       }
       #body {
@@ -45,10 +45,89 @@
 
         margin: 0 auto;
       }
+      .gradient1 {
+        background: rgb(34, 59, 195);
+        background: radial-gradient(
+          circle,
+          rgba(34, 59, 195, 0.9839286056219363) 0%,
+          rgba(45, 210, 253, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
+      .gradient2 {
+        background: rgb(63, 94, 251);
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
+      .gradient3 {
+        background: rgb(22, 223, 223);
+        background: linear-gradient(
+          107deg,
+          rgba(22, 223, 223, 1) 0%,
+          rgba(215, 200, 224, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
+
+      .gradient4 {
+        background: rgb(22, 223, 223);
+        background: linear-gradient(
+          107deg,
+          rgba(22, 223, 223, 1) 0%,
+          rgba(86, 224, 94, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
+      .gradient5 {
+        background: rgb(223, 205, 22);
+        background: linear-gradient(
+          107deg,
+          rgba(223, 205, 22, 1) 31%,
+          rgba(224, 107, 86, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
+      .gradient6 {
+        background: rgb(86, 224, 214);
+        background: linear-gradient(
+          107deg,
+          rgba(86, 224, 214, 1) 23%,
+          rgba(223, 22, 52, 1) 100%
+        );
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 2px;
+        height: 700px;
+        width: 1080px;
+      }
     </style>
   </head>
   <body>
-    <div class="bodyb">
+    <div class="bodyb" id="BG">
       <div style="position: absolute">
         <!-- <img
           src="images/cool-background (1).png"
@@ -64,14 +143,15 @@ font-family: 'Kreon', serif;
 font-family: 'Press Start 2P', cursive;
 font-family: 'Allerta Stencil', sans-serif;-->
       </div>
-      <div>
+      <div onclick="changeBG()">
         <div id="logoDiv">
-          <img src="images/logo.png" alt="" id="logo" />
-          <p
-            style="float: right;font-family: 'Press Start 2P', cursive; font-size: 10px"
-          >
-            GUVI
-          </p>
+          <img
+            src="logo/png/transLogo.png"
+            style="height: 100px;width: 150px"
+            alt=""
+            id="logo"
+            style="background: transparent !important"
+          />
         </div>
         <div id="body">
           <h1 style="font-family:'Dancing Script', cursive; font-size: 3em">
@@ -94,5 +174,25 @@ font-family: 'Allerta Stencil', sans-serif;-->
         </div>
       </div>
     </div>
+    <script>
+      var i = 0;
+      var classes = [
+        "gradient1",
+        "gradient2",
+        "gradient3",
+        "gradient4",
+        "gradient5",
+        "gradient6"
+      ];
+      function changeBG() {
+        if (i < 6) {
+          document.getElementById("BG").className = classes[i];
+          i++;
+        } else {
+          i = 0;
+          changeBG();
+        }
+      }
+    </script>
   </body>
 </html>
